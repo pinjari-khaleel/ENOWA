@@ -66,10 +66,8 @@
     <aem.sdk.api>2023.8.13206.20230821T124823Z-230702</aem.sdk.api>
     <acs.commons.version>6.1.0</acs.commons.version>
     <aemanalyser.version>1.4.10</aemanalyser.version>
-    
+    <sonar.maven.plugin.version>9.9.3.79811</sonar.maven.plugin.version>
     <componentGroupName>Enowa</componentGroupName>
-
-   <sonar.maven.plugin.version>3.9.1.2184</sonar.maven.plugin.version>
         
   </properties>
       
@@ -114,13 +112,12 @@
         <inherited>true</inherited>
                     
       </plugin>
-
+      <!-- Sonar Plugin -->
       <plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>${sonar.maven.plugin.version}</version>
-			  </plugin>
-                  
+			</plugin>            
       <!-- Maven Enforcer Plugin -->
                   
       <plugin>
@@ -431,7 +428,20 @@ Bundle-DocURL:
           </configuration>
                           
         </plugin>
-                        
+         <!-- Maven Jacoco Plugin for code coverage -->
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.5</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+                <goal>report</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>               
         <!-- Maven Failsafe Plugin -->
                         
         <plugin>
