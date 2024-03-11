@@ -66,7 +66,7 @@
     <aem.sdk.api>2023.8.13206.20230821T124823Z-230702</aem.sdk.api>
     <acs.commons.version>6.1.0</acs.commons.version>
     <aemanalyser.version>1.4.10</aemanalyser.version>
-    <sonar.maven.plugin.version>9.9.3.79811</sonar.maven.plugin.version>
+    <sonar.maven.plugin.version>10.4.0.87286</sonar.maven.plugin.version>
     <componentGroupName>Enowa</componentGroupName>
         
   </properties>
