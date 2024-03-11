@@ -68,6 +68,8 @@
     <aemanalyser.version>1.4.10</aemanalyser.version>
     
     <componentGroupName>Enowa</componentGroupName>
+
+   <sonar.maven.plugin.version>3.9.1.2184</sonar.maven.plugin.version>
         
   </properties>
       
@@ -112,6 +114,12 @@
         <inherited>true</inherited>
                     
       </plugin>
+
+      <plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>${sonar.maven.plugin.version}</version>
+			  </plugin>
                   
       <!-- Maven Enforcer Plugin -->
                   
