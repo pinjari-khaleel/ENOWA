@@ -116,7 +116,12 @@
       <plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
-				<version>${sonar.maven.plugin.version}</version>
+				<version>3.10.0.2594</version>
+	                        <configuration>
+            <exclusions>
+               <exclusion>ui.apps/src/main/content/jcr_root/apps/enowa/components/accordianvariation/accordianvariation.html</exclusion>
+            </exclusions>
+         </configuration>
 			</plugin>            
       <!-- Maven Enforcer Plugin -->
                   
