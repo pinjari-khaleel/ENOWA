@@ -1,0 +1,8 @@
+{
+  "sling.servlet.resourceTypes": [
+    "enowa/components/page"
+  ],
+  "externalizer.domain": "publish",
+  "include.lastmod": true,
+  "use.vanity": true
+}

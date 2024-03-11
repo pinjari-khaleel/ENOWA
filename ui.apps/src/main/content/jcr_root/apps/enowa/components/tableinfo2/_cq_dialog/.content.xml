@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Table Info Two Component"
+          extraClientlibs="authoring,clientlib-info"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <headertitle
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="No limit"
+                            fieldLabel="Header title"
+                            name="./headerTitle" />
+                    <titledescription
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="No limit (recommended to be max 2 lines)"
+                            fieldLabel="Description"
+                            name="./titleDescription"/>
+                    <multifieldbox
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}true"
+                            fieldDescription="Click + to add a new item"
+                            fieldLabel="Table Info">
+                        <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                max-item="14"
+                                min-item="8"/>
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                name="./tableInfoList">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <Icon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="Icon"
+                                                validation="svg-png-media-validation"
+                                                name="./sourceIcon"
+                                                rootPath="/content/dam"/>
+                                        <IconAlt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Icon Alt"
+                                                name="./altIcon"/>
+                                        <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="70 characters"
+                                                fieldLabel="Title"
+                                                name="./title"/>
+                                        <desTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="300 characters"
+                                                fieldLabel="Description Title"
+                                                name="./desTitle"/>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </multifieldbox>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

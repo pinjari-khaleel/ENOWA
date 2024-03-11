@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Infographics Component"
+          extraClientlibs="authoring"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideChildren="[properties]">
+                    <propertiesTab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="propertiesTab"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+
+                                    <image
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            rootPath="/content/dam"
+                                            granite:class="imageClass"
+                                            class="cq-droptarget"
+                                            fieldLabel="image"
+                                            fieldDescription="1440 x 900 px"
+                                            name="./image"
+                                            title="image"/>
+                                    <imageAlternativeText
+                                            granite:class="imageAlternativeTextClass"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="imageAlternativeText"
+                                            fieldDescription="imageAlternativeTextDes"
+                                            name="./imageAlternativeText"/>
+
+                                    <headerTitle
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Header Title"
+                                            fieldDescription="No limit"
+                                            required="{Boolean}true"
+                                            name="./headerTitle" >
+                                    </headerTitle>
+                                    <hType
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Type / Size"
+                                            fieldDescription= "Choose type/size for text"
+                                            name="./hType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <def
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="(default)"
+                                                    value="default" />
+                                            <h1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H1"
+                                                    value="h1" />
+                                            <h2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H2"
+                                                    value="h2" />
+                                            <h3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H3"
+                                                    value="h3" />
+                                            <h4
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H4"
+                                                    value="h4" />
+                                            <h5
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H5"
+                                                    value="h5" />
+                                            <h6
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H6"
+                                                    value="h6" />
+                                        </items>
+                                    </hType>
+                                    <headerDescription
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldLabel="Header Description"
+                                            fieldDescription="No limit (recommended to be max 2 lines)"
+                                            required="{Boolean}false"
+                                            name="./headerDescription"  useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <subsuperscript
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                        </rtePlugins>
+                                        <uiSettings jcr:primaryType="nt:unstructured">
+                                            <cui jcr:primaryType="nt:unstructured">
+                                                <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[subsuperscript#superscript,subsuperscript#subscript]">
+
+                                                </inline>
+                                            </cui>
+                                        </uiSettings>
+                                    </headerDescription>
+                                    <tabLists
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                            composite="{Boolean}true"
+                                            required="{Boolean}true"
+                                            fieldLabel="TabList"
+                                            fieldDescription="Minimum number of items is 2 items">
+                                        <field
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                name="./infographicsModelTabLists">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <image
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                        rootPath="/content/dam"
+                                                        granite:class="imageClass"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="image"
+                                                        validation="svg-media-validation"
+                                                        fieldDescription="56 x 56 px (recommended SVG format)"
+                                                        name="./image"
+                                                        title="image"/>
+                                                <imageAlternativeText
+                                                        granite:class="imageAlternativeTextClass"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="imageAlternativeText"
+                                                        fieldDescription="imageAlternativeTextDes"
+                                                        name="./imageAlternativeText"/>
+
+                                                <title
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldLabel="title"
+                                                        fieldDescription="Number"
+                                                        min="1"
+                                                        step="any"
+                                                        name="./title"/>
+                                                <list jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/foundation/form/select"
+                                                      class="cq-dialog-dropdown-showhide-infographics"
+                                                      required="{Boolean}true"
+                                                      cq-dialog-dropdown-showhide-target=".carousel-showhide-target"
+                                                      fieldLabel="Script Type:" name="./scriptType">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <superscript jcr:primaryType="nt:unstructured"
+                                                                     text="Super Script" value="superscript"/>
+                                                        <subscript jcr:primaryType="nt:unstructured"
+                                                                   text="Sub Script" value="subscript"/>
+                                                        <none jcr:primaryType="nt:unstructured"
+                                                                   text="None" value="none"/>
+                                                    </items>
+                                                </list>
+                                                <setSuperscript jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                                class="hide carousel-showhide-target"
+                                                                showhidetargetvalue="superscript">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <well jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/container">
+                                                            <layout jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                            <items jcr:primaryType="nt:unstructured">
+
+                                                                <superscript
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldDescription="20 – 25 characters"
+                                                                        fieldLabel="Super script"
+                                                                        name="./superScript" />
+
+                                                            </items>
+                                                        </well>
+                                                    </items>
+                                                </setSuperscript>
+                                                <setSubscript jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/container"
+                                                              class="hide carousel-showhide-target foundation-layout-util-vmargin"
+                                                              showhidetargetvalue="subscript">
+                                                    <items jcr:primaryType="nt:unstructured">
+
+                                                        <well jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/container">
+                                                            <layout jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <subscript
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Sub script"
+                                                                        fieldDescription="20 – 25 characters"
+                                                                        name="./subScript" />
+                                                            </items>
+                                                        </well>
+                                                    </items>
+                                                </setSubscript>
+                                                <setScript jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/container"
+                                                              class="hide carousel-showhide-target foundation-layout-util-vmargin"
+                                                              showhidetargetvalue="none">
+                                                    <items jcr:primaryType="nt:unstructured">
+
+                                                        <well jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/container">
+                                                            <layout jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <script
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldDescription="20 – 25 characters"
+                                                                        fieldLabel="Script"
+                                                                        name="./script" />
+                                                            </items>
+                                                        </well>
+                                                    </items>
+                                                </setScript>
+                                                <description
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                        fieldLabel="Description"
+                                                        required="{Boolean}true"
+                                                        fieldDescription="75 - 80 characters"
+                                                        name="./description"  useFixedInlineToolbar="{Boolean}true">
+                                                    <rtePlugins jcr:primaryType="nt:unstructured">
+                                                        <subsuperscript
+                                                                jcr:primaryType="nt:unstructured"
+                                                                features="*"/>
+                                                    </rtePlugins>
+                                                    <uiSettings jcr:primaryType="nt:unstructured">
+                                                        <cui jcr:primaryType="nt:unstructured">
+                                                            <inline
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    toolbar="[subsuperscript#superscript,subsuperscript#subscript]">
+
+                                                            </inline>
+                                                        </cui>
+                                                    </uiSettings>
+                                                </description>
+                                            </items>
+                                        </field>
+                                    </tabLists>
+                                </items>
+                            </column>
+                        </items>
+                    </propertiesTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

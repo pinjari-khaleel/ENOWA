@@ -1,0 +1,39 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.title}"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='clientlib-leadershipcard'}"/>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.TeamCardsModel"
+     data-sly-test="${item.name}">
+    <div class="${item.theme}">
+        <div class="leadership-card" data-leadership-card>
+            <div class="profile-img"><img src="${item.image}" alt="${item.imageAlternativeText}">
+                <div class="profile-title-mob-right">
+                    <div>
+                        <div class="name">${item.name} </div>
+                        <div class="position">${item.title}</div>
+                    </div>
+                    <span class="divider"></span>
+                </div>
+            </div>
+            <div class="profile-desc">
+                <div class="profile-wrap">
+                    <div class="profile-wrapper">
+                        <div class="profile-title">
+                            <div class="name">${item.name} </div>
+                            <div class="position">${item.title}</div>
+                        </div><span class="divider"></span>
+                        <div class="profile-desc_detail">${item.shortDescription}</div>
+                        <div class="profile-desc_detail-more">${item.description  @ context = 'html'}</div>
+                    </div>
+                    <div class="cta">
+                        <div class="cta-primary-light-wrapper">
+                            <div class="cta-primary-light-btn"><a class="cta-primary-light" href="javascript:void(0);" title="read More">read More</a>
+                            </div>
+                            <div class="cta-primary-light-icon"><span class="icon-teamscard-read-more"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>

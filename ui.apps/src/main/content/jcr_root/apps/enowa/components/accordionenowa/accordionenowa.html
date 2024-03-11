@@ -1,0 +1,45 @@
+<sly
+        data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+        data-sly-use.model="com.neom.enowa.aem.core.models.AccordionModel"
+        data-sly-test.text="${model.accordionMF}"/>
+
+<style>
+
+.enowa-content {
+    color: #2E3D4C;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+.enowa-content b {
+    font-size: 18px;
+}
+
+@media (max-width:768px) {
+    .enowa-content {
+        font-weight: 300;
+    }
+}
+
+</style>
+
+<div class="accordion" data-accordion  data-sly-list.firstList="${model.accordionMF}">
+    <div class="accordion-item" onclick="accordionHandler(this)">
+        <div class="accordion-header">
+            <div class="accordion-wrapper">
+                <div class="circle"><span class="icon-arrow-down"> </span></div>
+                <div class="accordion-wrapper_title">${firstList.title}</div>
+            </div>
+        </div>
+        <div class="accordion-body">
+            <div data-sly-list.secondList="${firstList.descriptionMF}" class="enowa-content">
+                ${secondList.description @ context = 'html'}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion_break"></div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories = 'accordion'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!text}"></sly>

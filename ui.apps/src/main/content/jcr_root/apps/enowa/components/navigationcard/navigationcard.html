@@ -1,0 +1,44 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.blockTitle}">
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='enowa.base'}">
+</sly>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.NavigationCardModel">
+    <div class="navigation-card">
+        <div class="navigation-card_header">
+            <h2>${item.blockTitle}</h2>
+        </div>
+        <div data-sly-list.multi="${item.navigationCardTabLists}" class="navigation-card_container">
+            <sly data-sly-test="${multi.linkURL}">
+                <div  class="navigation-card_container_image">
+                    <a href ="${multi.linkURL ? multi.linkURL : '#'}">
+                        <sly data-sly-test="${multi.assetType != 'video'}">
+                            <picture>
+                                <img src="${multi.assetImage}" alt="${multi.imageAlt}">
+                            </picture>
+                        </sly>
+
+                        <sly data-sly-test="${multi.assetType == 'video'}">
+                            <video class="" autoplay loop muted>
+                                <source src="${multi.videoBackgroundImage}" alt="${multi.videoBackgroundImageAlt}"
+                                        type="video/mp4">
+                            </video>
+                        </sly>
+
+                        <div class="navigation-card_container_image_content">
+                            <div class="navigation-card_container_image_title">
+                                <p>${multi.title}</p>
+                                <span class="icon-arrow-right-side"></span>
+                            </div>
+                            <div class="navigation-card_container_image_description">
+                                <p>${multi.description}</p>
+                                <span class="icon-arrow-right-side"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </sly>
+        </div>
+    </div>
+</sly>

@@ -1,0 +1,66 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.PageHeaderModel"
+     data-sly-test.text="${model.title}">
+    <section class="pagevideo-section">
+        <div class="pageheader" data-page-header>
+            <div class="header">
+                <div class="pageheader__video">
+                    <sly data-sly-test="${model.bgAssetType == 'video'}">
+                        <video autoplay loop muted>
+                            <source src="${model.sourceVideo}" alt="${model.altVideo}" type="video/mp4">
+                        </video>
+                    </sly>
+
+                    <sly data-sly-test="${model.bgAssetType != 'video' }">
+                        <div class="pageheader_img">
+                            <img src="${model.sourceImg}" alt="${model.altImg}">
+                        </div>
+                    </sly>
+                </div>
+                <div class="pageheader__content">
+                    <div class="pageheader__content__p">
+                        <div>${model.title}</div>
+                        <h2>${model.description}</h2>
+                    </div>
+                    <div class="pageheader__content__flex" data-sly-test="${model.ctaBtn.isEmpty == false}">
+                        <div data-sly-test="${model.ctaAssetType == 'link'}">
+                            <div class="cta-primary-dark-wrapper">
+                                <div class="cta-primary-dark-btn"><a class="cta-primary-dark" href="${model.ctaSourceLink}" title="play video" attr="data-open-modal">${model.ctaBtn}</a>
+                                </div>
+                                <div class="cta-primary-dark-icon"><span class="icon-arrow-right-side"></span></div>
+                            </div>
+                        </div>
+                        <div class="cta" data-sly-test="${model.ctaAssetType == 'ctavideo'}">
+                            <div class="cta-primary-dark-wrapper">
+                                <div class="cta-primary-dark-btn"><a class="cta-primary-dark open-modal" href="javascript:void(0);" title="play video" attr="data-open-modal">${model.ctaBtn}</a>
+                                </div>
+                                <div class="cta-primary-dark-icon"><span class="icon-arrow-right-side"></span></div>
+                            </div>
+                        </div>
+                        <sly data-sly-test="${model.ctaAssetType == 'ctavideo'}">
+                            <div class="modal-custom" data-modal-block>
+                                <div class="modal-custom_dialog">
+                                    <div class="modal-custom_content video-iframe">
+                                        <sly data-sly-test="${!model.testValue}">
+                                            <video autoplay loop muted>
+                                                <source src="${model.ctaSourceVideo}" type="video/mp4">
+                                            </video>
+                                        </sly>
+                                        <sly data-sly-test="${model.testValue}">
+                                            <iframe width="100%" height="700" src="${model.ctaSourceVideo}" frameborder="0" allowfullscreen="1" webkitallowfullscreen="1" allow="autoplay" sandbox="allow-same-origin allow-scripts"></iframe>
+                                        </sly>
+                                    </div><span class="modal-custom_close" data-close-modal>
+                                    <div class="icon-close"></div>
+                                </span>
+                                </div>
+                            </div>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</sly>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='banner_page'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!text}"></sly>

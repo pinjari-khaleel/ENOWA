@@ -1,0 +1,60 @@
+<!--/*
+    Copyright 2017 Adobe Systems Incorporated
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+<sly data-sly-use.pageModel="com.neom.enowa.aem.core.models.PageModel">
+    <sly data-sly-test="${pageModel.favicon}">
+        <link rel="icon" sizes="32x32" href="${pageModel.favicon}" type="image/x-icon">
+    </sly>
+    <sly data-sly-test="${pageModel.googleTagManagerScript}">
+        ${pageModel.googleTagManagerScript @ context='unsafe'}
+    </sly>
+</sly>
+
+<!-- Start Adding Meta Tags Here -->
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@ENOWA_NEOM"/>
+<meta name="twitter:title" content="ENOWA NEOM"/>
+<meta name="twitter:description" content="Partnering with nature to transform and realize the sustainable possibilities of energy & water"/>
+<meta name="twitter:image" content="https://twitter.com/ENOWA_NEOM/photo"/>
+
+
+<!-- Open Graph data (used by Facebook and also Instagram) -->
+<meta property="og:title" content="ENOWA NEOM" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://enowa.neom.com/" />
+<meta property="og:image" content="https://enowa.neom.com/assets/images/logo.png" />
+<meta property="og:description" content="Partnering with Nature for Sustainable Energy & Water Solutions
+A subsidiary of NEOM" />
+<meta property="og:site_name" content="ENOWA NEOM" />
+
+
+<!-- Linking to a YouTube video or channel -->
+<meta property="og:site_name" content="YouTube">
+<meta property="og:url" content="https://www.youtube.com/@ENOWA_NEOMOFFICIAL">
+<meta property="og:title" content="ENOWA NEOM">
+<meta property="og:image" content="https://yt3.googleusercontent.com/a4ASUYS9AwQvIfptS9TmwmXtg0pizj1rdj1ZACiYg34GyH36OOjRq9Lys6uA3Jd8JtHl_XtW=s176-c-k-c0x00ffffff-no-rj">
+<meta property="og:description" content="Partnering with Nature for Sustainable Energy & Water Solutions
+A subsidiary of NEOM">
+
+
+<!-- End Adding Meta Tags Here -->
+
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='enowa.base'}"/>
+</sly>
+
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

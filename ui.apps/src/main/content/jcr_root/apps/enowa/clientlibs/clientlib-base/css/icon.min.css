@@ -1,0 +1,112 @@
+/* version: 02-10-2023 16:42:07 */
+@charset "UTF-8";
+@font-face {
+  font-family: icomoon;
+  src: url(../resources/fonts/icomoon.eot?y6js30);
+  src: url(../resources/fonts/icomoon.eot?y6js30#iefix) format('embedded-opentype'),
+    url(../resources/fonts/icomoon.ttf?y6js30) format('truetype'),
+    url(../resources/fonts/icomoon.woff?y6js30) format('woff'),
+    url(../resources/fonts/icomoon.svg?y6js30#icomoon) format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+[class*=' icon-'],
+[class^='icon-'] {
+  font-family: icomoon !important;
+  speak: never;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-right-side:before {
+  content: '\e911';
+}
+.icon-arrow-left-side:before {
+  content: '\e914';
+}
+.icon-button-video-play:before {
+  content: '\e91a';
+}
+.icon-mute:before {
+  content: '\e915';
+}
+.icon-pause:before {
+  content: '\e916';
+}
+.icon-play:before {
+  content: '\e917';
+}
+.icon-setting:before {
+  content: '\e918';
+}
+.icon-unmute:before {
+  content: '\e919';
+}
+.icon-nav-menu:before {
+  content: '\e902';
+}
+.icon-nav-vector:before {
+  content: '\e903';
+}
+.icon-semi-arrow-down:before {
+  content: '\e904';
+}
+.icon-semi-arrow-right:before {
+  content: '\e906';
+}
+.icon-semi-arrow-up:before {
+  content: '\e908';
+}
+.icon-teamscard-read-less:before {
+  content: '\e909';
+}
+.icon-teamscard-read-more:before {
+  content: '\e910';
+}
+.icon-circle-minus:before {
+  content: '\e900';
+}
+.icon-circle-plus:before {
+  content: '\e901';
+}
+.icon-enowa-logo:before {
+  content: '\e905';
+}
+.icon-close:before {
+  content: '\e907';
+}
+.icon-landing-plus:before {
+  content: '\e90a';
+}
+.icon-youtube:before {
+  content: '\e90b';
+}
+.icon-linkedIn:before {
+  content: '\e90c';
+}
+.icon-twitter:before {
+  content: '\e90d';
+}
+.icon-facebook:before {
+  content: '\e90e';
+}
+.icon-ellipse:before {
+  content: '\e90f';
+}
+.icon-arrow-up:before {
+  content: '\e912';
+}
+.icon-arrow-down:before {
+  content: '\e913';
+}
+.icon-plus:before {
+  content: '\ea0a';
+}
+.icon-minus:before {
+  content: '\ea0b';
+}

@@ -1,0 +1,47 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'enowa.base'}"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.CopyComponentModel"
+     data-sly-test.text="${item.borderColor}">
+    <div class="mainContainer" style="background-color:${item.borderColor @ context='styleToken'};">
+        <div class="copyMainContainer">
+            <div class="col-6">
+                <div class="mobile-content-h2">
+                    <div class="copyOurTitle">${item.title}</div>
+                    <h2>
+                        ${item.bigTitle}
+                    </h2>
+                </div>
+                <sly data-sly-test="${item.assetType == 'video'}">
+                    <div class="copyVidoeContainer">
+                        <video autoplay loop muted>
+                            <source src="${item.video}" type="video/mp4">
+                        </video>
+                    </div>
+                </sly>
+                <sly data-sly-test="${item.assetType != 'video'}">
+                    <img class="bottomBgImage" src="${item.image}" alt="${item.imageAlt}">
+                </sly>
+            </div>
+            <div class="col-5">
+                <div class="copyNatureContainer">
+                    <div class="copyNatureContent">
+                        ${item.headerTitle}
+                        <div class="copyNatureContentMobile">
+                            ${item.headerTitle}
+                        </div>
+                    </div>
+                    <div class="mobile-content-bottom">
+                        <sly data-sly-test="${item.headerTitle}">
+                            <div class="customBorderBottom"> </div>
+                        </sly>
+                        <div class="copyNatureDecContainer">
+                            ${item.text @ context ='html'}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+<sly  data-sly-call="${template.placeholder @ isEmpty=!text}"></sly>

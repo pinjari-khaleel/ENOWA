@@ -1,0 +1,53 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder  @ isEmpty=!properties.title}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories = 'HorizontalAccordion,enowa.base'}"/>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.HorizontalAccordionModel" data-sly-test="${item.title}">
+    <div class="h_accordion_container" data-horizondal-accordion>
+        <h2 class="h_accordion_container_heading">${item.title}</h2>
+        ${item.description @ context='html'}
+        <div class="h_accordion_cards_box">
+            <div class="h_accordion_cards" data-horizondal-accordion data-sly-list.multi="${item.horizontalAccordTabLists}">
+                <div class="h_accordion_card">
+                    <div class="h_accordion_wrapper">
+                        <div class="h_accordion_mini_container">
+                            <sly data-sly-test="${multi.assetType == 'video'}">
+                                <video autoplay loop muted>
+                                    <source src="${multi.video}" alt="videoAlt" type="video/mp4" />
+                                </video>
+                            </sly>
+                            <sly data-sly-test="${multi.assetType != 'video'}">
+                                <img src="${multi.assetImage}" alt="imageAlt">
+                            </sly>
+                            <div class="h_accordion_mini_content">
+                                <img src="${multi.icon}" alt="iconAlternative">
+                                <span>${multi.title}</span>
+                            </div>
+                        </div>
+                        <div class="h_accordion_expanded_container">
+                            <div class="h_accordion_expanded_container_image">
+                                <sly data-sly-test="${multi.assetType == 'video'}">
+                                    <video autoplay loop muted>
+                                        <source src="${multi.video}" alt="videoAlt" type="video/mp4" />
+                                    </video>
+                                </sly>
+                                <sly data-sly-test="${multi.assetType != 'video'}">
+                                    <img src="${multi.assetImage}" alt="imageAlt">
+                                </sly>
+                            </div>
+                            <div class="h_accordion_expanded_content">
+                                <div class="h_accordion_expanded_content_image">
+                                    <img src="${multi.icon}" alt="iconAlternative">
+                                </div>
+                                <div class="h_accordion_expanded_content_sub">
+                                    <p>${multi.title}</p>
+                                    ${multi.description  @ context ='html'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>

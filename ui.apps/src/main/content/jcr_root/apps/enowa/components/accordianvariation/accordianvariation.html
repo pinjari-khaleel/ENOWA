@@ -1,0 +1,35 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.faqTitle}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='clientlib-accordianvariation'}"/>
+
+<div data-sly-use.model="com.neom.enowa.aem.core.models.AccordionVariation"
+     data-sly-test="${model.bgColour}">
+    <div class="${model.bgColour} cmp-name">
+        <div class="faq-wrapper" data-faq>
+            <div class="faq-header">
+                <h2>${model.faqTitle}</h2>
+            </div>
+            <div class="faq" data-faq-count="${model.variationItems.size}">
+                <sly data-sly-list.item="${model.variationItems}">
+                <div class="faq_container">
+                    <div class="faq_container_items">
+                        <div class="faq_container_items_content">
+                            <div class="faq_container_items_content_number">${item.count}</div>
+                            <div class="faq_container_items_content_question">
+                                <div class="faq_container_items_content_question_title">
+                                    ${item.questionTitle}
+                                    <i class="icon-circle-plus"></i>
+                                </div>
+                                <div class="answer-${itemList.index} faq_container_items_content_answer">
+                                    ${item.faqDescription @ context ='html'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </sly>
+            </div>
+        </div>
+    </div>
+</div>

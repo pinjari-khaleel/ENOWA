@@ -1,0 +1,54 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<style>
+.line-break{
+width:100%;
+text-align:left;
+margin:0;
+margin-bottom:24px;
+}
+.copy-description {
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+margin:0;
+}
+.copy-description p{
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+margin:0;
+}
+
+.copy-description p sub,
+.copy-description p sup {
+    line-height: 0px;
+}
+
+
+@media (max-width:768px) {
+    .copy-description {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 28px;
+        margin:0;
+    }
+    .copy-description p {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 28px;
+        margin:0;
+    }
+}
+</style>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.FontColor">
+    <div>
+        <hr class="line-break" data-sly-test="${properties.newLine}">
+        <div class="copy-description"  style="color: ${model.color @ context='styleToken'};" >${properties.text @ context='html'}</div>
+    </div>
+</sly>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.text}"></sly>

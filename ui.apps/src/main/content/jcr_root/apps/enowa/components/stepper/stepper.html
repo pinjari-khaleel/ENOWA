@@ -1,0 +1,189 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.assetType}"></sly>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.StepperModel"
+     data-sly-test="${model.blockTitle}">
+
+    <div class="stepper-container" data-stepper-block>
+        <div class="stepper-header">
+            <h2>${model.blockTitle}</h2>
+            <div class="text-description">${model.blockDescription @ context ='html'}</div>
+        </div>
+        <div class="stepper-content">
+
+            <sly data-sly-test="${model.assetType == 'video'}">
+                <video class="stepper-image" playsinline="" loop="" muted="" autoplay src="${model.videoBackground}"></video>
+            </sly>
+            <sly data-sly-test="${model.assetType != 'video'}">
+                <img class="stepper-image" src="${model.assetImage}" alt="${model.imageAlt}" srcset="">
+            </sly>
+
+
+
+            <div class="stepper-slide">
+
+                <sly data-sly-list.multi="${model.stepperItems}" >
+                    <div class="stepper-container_circle">
+                        <div class="stepper-logo-container-wrapper">
+                            <div class="stepper-container_circle_logo">
+
+                                <img src="${multi.sourceImg}" alt="${multi.altIcon}">
+
+                            </div>
+                            <div class="stepper-content-wrapper">
+                                <div class="stepper-container_circle_heading">${multi.title}</div>
+                                <div class="stepper-container_circle_description_overflow">
+                                    <div class="stepper-container_circle_description">${multi.description @ context ='html'}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sly>
+
+
+                <div class="stepper-container_right_slide">
+                    <sly data-sly-list.multi="${model.stepperItems}" >
+                        <sly data-sly-test = "${multiList.index != 0}">
+                            <div class="stepper-container_right_slide_wrapper">
+                                <div class="stepper-container_right_slide_wrapper_circle">
+                                    <div class="circle-icon">
+                                        <img src="${multi.sourceImg}" alt="${multi.altIcon}">
+                                    </div>
+                                </div>
+                                <div class="stepper-container_right_slide_wrapper_title">${multi.title}</div>
+                            </div>
+                        </sly>
+                    </sly>
+                </div>
+            </div>
+            <div class="stepper-navigation-mobile">
+                <div class="arrow__icons">
+                    <span class="icon-arrow-left-side"></span>
+                    <span class="icon-arrow-right-side"></span>
+                </div>
+            </div>
+        </div>
+        <div class="stepper-navigation">
+                <div class="arrow__icons"> <span class="icon-arrow-left-side"></span><span class="icon-arrow-right-side"></span></div>
+                <div class="stepper-dotted-line">
+                    <svg width="630" height="8" viewBox="0 0 730 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="1.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="8.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="15.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="22.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="29.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="36.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="43.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="50.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="57.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="64.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="71.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="78.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="85.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="92.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="99.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="106.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="113.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="120.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="127.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="134.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="141.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="148.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="155.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="162.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="169.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="176.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="183.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="190.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="197.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="204.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="211.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="218.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="225.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="232.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="239.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="246.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="253.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="260.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="267.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="274.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="281.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="288.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="295.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="302.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="309.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="316.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="323.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="330.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="337.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="344.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="351.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="358.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="365.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="372.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="379.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="386.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="393.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="400.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="407.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="414.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="421.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="428.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="435.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="442.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="449.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="456.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="463.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="470.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="477.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="484.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="491.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="498.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="505.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="512.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="519.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="526.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="533.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="540.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="547.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="554.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="561.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="568.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="575.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="582.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="589.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="596.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="603.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="610.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="617.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="624.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="631.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="638.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="645.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="652.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="659.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="666.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="673.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="680.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="687.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="694.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="701.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="708.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="715.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="722.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="729.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="736.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="743.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="750.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="757.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="764.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="771.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                        <circle cx="778.5" cy="4" r="1" fill="#8FD3D3"></circle>
+                    </svg>
+                </div>
+                <div class="stepper-carousel-dots"></div>
+        </div>
+    </div>
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${clientlib.all @ categories='enowa.stepper'}"/>
+
+</sly>

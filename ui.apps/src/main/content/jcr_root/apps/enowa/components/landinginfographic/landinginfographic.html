@@ -1,0 +1,77 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='clientlib-infographicmodel'}"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.LandingInfoGraphicModel"
+     data-sly-test.text="${item.infographicLists}">
+
+    <div class="landingpage" data-landing-page data-sly-list.multi="${item.infographicLists}" onclick="">
+        <div class="${multi.variation}">
+            <div class="landingpage_circle" style="box-shadow: 0 45px 105px -35px ${multi.borderColor @ context='styleToken'}; border-color:${multi.borderColor @ context='styleToken'};">
+                <sly data-sly-test="${multi.assetType != 'video'}">
+                    <img src="${multi.assetImage}" alt="${multi.imageAlt}">
+                </sly>
+                <sly data-sly-test="${multi.assetType == 'video'}">
+                    <sly data-sly-test="${multi.isVideoURL}">
+                        <div class="video">
+                            <iframe src="${multi.video}" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts"> </iframe>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${!multi.isVideoURL}">
+                        <video class="video" playsinline=""  loop="" muted="" style="width: 100%; height: 100%; object-fit: cover;" src="${multi.video}" alt="${multi.videoAlt}"></video>
+                    </sly>
+                </sly>
+                <div class="landingpage_circle_content">
+                    <div>
+                        <div>
+                            <h2>${multi.title @ context='html'}</h2>
+                            <span>
+                                ${multi.description}
+                            </span>
+                        </div>
+                        <div class="landingpage_circle_content_variation_one">
+                            <h1>${multi.title @ context='html'}</h1>
+                            <span>
+                                ${multi.description}
+                            </span>
+                        </div>
+                        <div><i class="icon-landing-plus"></i></div>
+                    </div>
+                </div>
+                <div class="landingpage_circle_content_two circle_div_contain" style="background-color:${multi.borderColor @ context='styleToken'};"></div>
+                <div class="landingpage_circle_content_three" >
+                    <div class="landingpage_circle_content_three_variation_one">
+                        <div class="cta-primary-dark-wrapper">
+                            <div class="cta-primary-dark-btn">
+                                <sly data-sly-test="${multi.link}">
+                                    <a style="color:${multi.borderColor @ context='styleToken'};" href="${multi.link}">${multi.cta}</a>
+                                </sly>
+                                <sly data-sly-test="${!multi.link}">
+                                    <a href="">${multi.cta}</a>
+                                </sly>
+                            </div>
+                            <div class="cta-primary-dark-icon">
+                                <span class="icon-arrow-right-side"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="landingpage_circle_content_three_variation_two">
+                        <div>
+                            <div class="landingpage_circle_content_three_variation_two_content">
+                                <p>${multi.description}</p>
+                            </div>
+                            <div class="landingpage_circle_content_three_variation_two_cta">
+                                <sly data-sly-test="${multi.link}">
+                                    <a style="color:${multi.borderColor @ context='styleToken'};" href="${multi.link}">${multi.cta}</a>
+                                </sly>
+                                <sly data-sly-test="${!multi.link}">
+                                    <a href="">${multi.cta}</a>
+                                </sly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!text}"></sly>

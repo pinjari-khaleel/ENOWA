@@ -1,0 +1,30 @@
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<style>
+
+.line-break{
+width:100%;
+text-align:left;
+margin-left:0;
+}
+.rich-textBox{
+font-size: 18px;
+font-weight: 700;
+line-height: 27px;
+letter-spacing: 3px;
+text-align: left;
+text-transform: uppercase;
+margin: 0;
+
+}
+</style>
+
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.FontColor">
+    <div>
+        <hr class="line-break" data-sly-test="${properties.newLine}">
+        <p class="rich-textBox" style="color: ${model.color @ context='styleToken'};">${properties.text}</p>
+    </div>
+</sly>
+
+
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.text}"></sly>

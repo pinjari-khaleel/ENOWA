@@ -1,0 +1,64 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder  @ isEmpty=!properties.headerTitle}"/>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.TableInfo2"
+     data-sly-test="${model.headerTitle}">
+    <div class="table-info2">
+        <div class="table-info2_header">
+            <div class="table-info2_header_title">
+                <h2>${model.headerTitle}</h2>
+                <p>${model.titleDescription}</p>
+            </div>
+            <div class="table-info2_header_navigation">
+                <span class="icon-arrow-left-side left-arrow" ></span>
+                <span class="icon-arrow-right-side right-arrow"></span>
+            </div>
+        </div>
+        <div class="table-info2_content" >
+            <div class="table-info2_content_row1" >
+                <sly data-sly-list.multi="${model.tableInfoOne}">
+                    <div class="table-card">
+                        <div class="table-card_icon"><img src="${multi.sourceIcon}" alt="${multi.altIcon}"></div>
+                        <div class="table-card_title">${multi.title}</div>
+                        <div class="table-card_overlay">
+                            <p class="overlay-title">${multi.title}</p>
+                            <p class="overlay-desc">${multi.desTitle}</p>
+                        </div>
+                    </div>
+                </sly>
+            </div>
+            <div class="table-info2_content_row2" >
+                <sly data-sly-test="${model.tableInfoTwo}" data-sly-list.inner="${model.tableInfoTwo}">
+                    <div class="table-card">
+                        <div class="table-card_icon"><img src="${inner.sourceIcon}" alt="${inner.altIcon}"></div>
+                        <div class="table-card_title">${inner.title}</div>
+                        <div class="table-card_overlay">
+                            <p class="overlay-title">${inner.title}</p>
+                            <p class="overlay-desc">${inner.desTitle}</p>
+                        </div>
+                    </div>
+                </sly>
+            </div>
+        </div>
+        <div class="table-info2_mobile-view">
+            <div class="icons-container">
+                <div class="icons-row">
+                    <sly data-sly-list.multi="${model.tableInfoFullList}">
+                        <div class="icons-row_icon" ><img src="${multi.sourceIcon}" alt="${multi.altIcon}"></div>
+                    </sly>
+                </div>
+            </div>
+            <div class="cards-row">
+                <div class="cards-container">
+                    <sly data-sly-list.multi="${model.tableInfoFullList}">
+                        <div class="cards-container_card">
+                            <p class="card-title">${multi.title}</p>
+                            <p class="card-desc">${multi.desTitle}</p>
+                        </div>
+                    </sly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${clientlib.all @ categories = 'enowa.tableinfo2'}"/>
+</sly>

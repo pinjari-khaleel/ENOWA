@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Header Carousel"
+          extraClientlibs="authoring"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <multifieldbox
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}true"
+                            fieldDescription="Click + to add a new item"
+                            fieldLabel="Header Items">
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                name="./headerItems">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <list jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/foundation/form/select"
+                                              class="cq-dialog-dropdown-showhide-first"
+                                              cq-dialog-dropdown-showhide-target=".carousel-showhide-target"
+                                              fieldLabel="Asset Type:"
+                                              name="./assetType">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <video jcr:primaryType="nt:unstructured"
+                                                       text="Video"
+                                                       value="video"/>
+                                                <image jcr:primaryType="nt:unstructured"
+                                                       text="Image/GIF"
+                                                       value="image"/>
+                                            </items>
+                                        </list>
+                                        <setVideo jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/foundation/container"
+                                                  class="hide carousel-showhide-target"
+                                                  showhidetargetvalue="video">
+                                            <items
+                                                    jcr:primaryType="nt:unstructured">
+                                                <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                                        class="coral-Heading coral-Heading--4"
+                                                        level="{Long}4"
+                                                        text="Video Configuration"/>
+                                                <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                    <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                    <items
+                                                            jcr:primaryType="nt:unstructured">
+                                                        <videoBackgroundURL
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldLabel="Video Background Image"
+                                                                rootPath="/content/dam"
+                                                                name="./videoBackgroundURL">
+                                                        </videoBackgroundURL>
+                                                        <videoBackgroundURLAlt
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Video Background Image Alt"
+                                                                name="./videoBackgroundURLAlt">
+                                                        </videoBackgroundURLAlt>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                        </setVideo>
+                                        <setImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                class="hide carousel-showhide-target foundation-layout-util-vmargin"
+                                                showhidetargetvalue="image">
+                                            <items
+                                                    jcr:primaryType="nt:unstructured">
+                                                <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                                        class="coral-Heading coral-Heading--4" level="{Long}4"
+                                                        text="Image Configuration"/>
+                                                <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                    <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                    <items
+                                                            jcr:primaryType="nt:unstructured">
+                                                        <asset
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                fieldLabel="Image/GIF"
+                                                                rootPath="/content/dam/"
+                                                                name="./assetImage"/>
+                                                        <imageAlt
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Image/GIF alt"
+                                                                fieldDescription="1440 x 880 px"
+                                                                name="./imageAlt">
+                                                        </imageAlt>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                        </setImage>
+                                        <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Title"
+                                                required="{Boolean}true"
+                                                fieldDescription="80 characters"
+                                                name="./title"/>
+                                        <smallTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Small Title"
+                                                fieldDescription="65 characters"
+                                                name="./titleSmall"/>
+                                        <btnlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="CTA button Label"
+                                                fieldDescription="CTA button Label"
+                                                required="{Boolean}true"
+                                                name="./btnLabel"/>
+
+                                        <listtwo jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/foundation/form/select"
+                                                 class="cq-dialog-dropdown-showhide-second"
+                                                 cq-dialog-dropdown-showhide-target=".carousel-showhide-target-list"
+                                                 fieldLabel="Asset Type CTA:" name="./ctaAssetType">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <video jcr:primaryType="nt:unstructured"
+                                                       text="Video CTA" value="ctavideo"/>
+                                                <image jcr:primaryType="nt:unstructured"
+                                                       text="Link CTA" value="link"/>
+                                            </items>
+                                        </listtwo>
+
+                                        <setVideot jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/foundation/container"
+                                                   class="hide carousel-showhide-target-list"
+                                                   showhidetargetvalue="ctavideo">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <heading jcr:primaryType="nt:unstructured"
+                                                         sling:resourceType="granite/ui/components/foundation/heading"
+                                                         class="coral-Heading coral-Heading--4"
+                                                         level="{Long}4"
+                                                         text="CTA button Video Configuration"/>
+                                                <well jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/foundation/container">
+                                                    <layout jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <video
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldLabel="Video Source"
+                                                                rootPath="/content/dam"
+                                                                name="./ctaSourceVideo">
+                                                        </video>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                        </setVideot>
+                                        <setLinkt jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/foundation/container"
+                                                  class="hide carousel-showhide-target-list foundation-layout-util-vmargin"
+                                                  showhidetargetvalue="link">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <heading jcr:primaryType="nt:unstructured"
+                                                         sling:resourceType="granite/ui/components/foundation/heading"
+                                                         class="coral-Heading coral-Heading--4"
+                                                         level="{Long}4"
+                                                         text="CTA Button Link Configuration"/>
+                                                <well jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/foundation/container">
+                                                    <layout jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <LinkSource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                fieldLabel="Link Source"
+                                                                rootPath="/content"
+                                                                name="./ctaSourceLink">
+                                                        </LinkSource>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                        </setLinkt>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </multifieldbox>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

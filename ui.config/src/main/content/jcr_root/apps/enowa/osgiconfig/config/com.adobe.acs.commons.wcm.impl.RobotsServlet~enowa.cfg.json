@@ -1,0 +1,6 @@
+{
+  "sling.servlet.resourceTypes": [
+    "enowa/components/page"
+  ],
+  "robots.content.property.path": "/content/dam/enowa/robots.txt/jcr:content/renditions/original/jcr:content/jcr:data"
+}

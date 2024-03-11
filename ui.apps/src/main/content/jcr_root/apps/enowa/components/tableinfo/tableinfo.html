@@ -1,0 +1,40 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories = 'tableinfo'}"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.TableInfoModel"
+     data-sly-test="${model.tableInfoModelTabLists}">
+    <div class="tableinfo">
+        <div class="tableinfo_main">
+            <div data-sly-test="${model.headerTitle || model.headerDescription}" class="tableinfo__header">
+                <div data-sly-test="${model.headerTitle}" class="tableinfo__header__content1">
+                    <h2>${model.headerTitle}</h2>
+                </div>
+
+                <div data-sly-test="${model.headerDescription}" class="tableinfo__header__content2">
+                    <p>${model.headerDescription}</p>
+                </div>
+            </div>
+            <div class="tableinfo__center">
+                <div data-sly-test="${model.title}" class="tableinfo__center__content1">
+                    <h2>${model.title}</h2>
+                </div>
+                <div data-sly-test="${model.description}" class="tableinfo__center__content2">
+                    ${model.description @ context ='html'}
+                </div>
+            </div>
+            <div class="tableinfo__bottom" >
+                <div class="tableinfo__bottom__content1" data-sly-list.multi="${model.tableInfoModelTabLists}">
+                    <div class="tableinfo__bottom__content1__first">
+                        <div class="tableinfo__bottom__content1__first__content">
+                            <div class="tableinfo__bottom__content1__first__content__two"><img src="${multi.image}" alt="${multi.imageAlternativeText}" srcset=""></div>
+                            <div class="tableinfo__bottom__content1__first__content__three">
+                                ${multi.description @ context ='html'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.tableInfoModelTabLists}"></sly>

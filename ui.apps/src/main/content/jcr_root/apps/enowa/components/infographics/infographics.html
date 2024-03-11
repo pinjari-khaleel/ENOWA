@@ -1,0 +1,49 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.image}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='clientlib-infographics'}"></sly>
+
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.InfographicsModel"
+     data-sly-test="${item.headerTitle}">
+  <div class="infographic" data-infographic>
+    <div class="infographic_image"><img src="${item.image}" alt="${item.imageAlternativeText}"></div>
+    <div class="infographic_main">
+      <div class="infographic_main_header">
+        <h2>${item.headerTitle}</h2>
+        <div class="infographic_main_header_para">
+          ${item.headerDescription @ context = 'html'}
+        </div>
+      </div>
+      <div class="infographic_main_content">
+        <sly data-sly-list.multi="${item.infographicsModelTabLists}">
+          <div class="infographic_main_content_ellipse-container">
+            <div class="infographic_main_content_ellipse-container_ellipse">
+              <div class="infographic_main_content_ellipse-container_ellipse_img-container">
+                <img src="${multi.image}" alt="${multi.imageAlternativeText}">
+              </div>
+              <div class="overflow_text">
+                <div class="${multi.scriptType == 'subscript' ? 'overflow_text_sub':''}">
+                  <h1 data-sly-test="${multi.title}" data-countto="${multi.title}" data-duration="2000"></h1>
+                  <!-- <h2 data-sly-test="${!multi.title}"></h2> -->
+                  <sly data-sly-test="${multi.scriptType == 'superscript'}">
+                    <sup class="count-sup">${multi.superScript @ context='html'}</sup>
+                  </sly>
+                  <sly data-sly-test="${multi.scriptType == 'subscript'}">
+                    <span class="overflow_text_number_desc">${multi.subScript @ context='html'}</span>
+                  </sly>
+                  <sly data-sly-test="${multi.scriptType == 'none'}">
+                    <sup class="count-sup">${multi.script @ context='html'}</sup>
+                  </sly>
+                </div>
+                <div class="overflow_text_description">
+                    ${multi.description @ context = 'html'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </sly>
+      </div>
+    </div>
+  </div>
+</sly>
+

@@ -1,0 +1,95 @@
+<sly
+        data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+        data-sly-use.model="com.neom.enowa.aem.core.models.HeaderModel"
+        data-sly-test.text="${model.headerItemsModified}">
+    <div class="carousel-container pagevideo-section" data-carousel-header>
+        <sly data-sly-list.item="${model.headerItemsModified}">
+            <div class="${wcmmode.edit ? 'carousel-card editor':'carousel-card'}">
+                <sly data-sly-test="${item.assetType == 'video'}">
+                    <video class="carousel-img" preload="auto" playsinline="" loop="" muted="" autoplay src="${item.videoBackgroundURL}"></video>
+                </sly>
+                <sly data-sly-test="${item.assetType != 'video'}">
+                    <img class="carousel-img" src="${item.assetImage}">
+                </sly>
+                <div class="carousel-content">
+                    <div class="pageheading">
+                        <p>${item.titleSmall}</p>
+                        <h1>${item.title}</h1>
+                        <h2>${item.title}</h2>
+                    </div>
+                    <sly data-sly-test="${item.ctaAssetType == 'ctavideo'}">
+                        <div class="pageheader__content__flex">
+                            <div class="cta">
+                                <div class="cta-primary-dark-wrapper">
+                                    <div class="cta-primary-dark-btn">
+                                        <a class="cta-primary-dark" href="javascript:void(0);" title="${item.ctaSourceVideo}" attr="data-open-modal">${item.btnLabel}</a>
+                                    </div>
+                                    <div class="cta-primary-dark-icon">
+                                        <span class="icon-arrow-right-side"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-custom">
+                                <div class="modal-custom_dialog">
+                                    <div class="modal-custom_content video-iframe">
+                                        <sly data-sly-test="${item.testUrl}">
+                                            <iframe width="100%" height="700" src="${item.ctaSourceVideo}" frameborder="0" allowfullscreen="1" webkitallowfullscreen="1" allow="autoplay" sandbox="allow-same-origin allow-scripts"></iframe>
+                                        </sly>
+                                        <sly data-sly-test="${!item.testUrl}">
+                                            <video autoplay loop muted controls>
+                                                <source src="${item.ctaSourceVideo}" type="video/mp4" />
+                                            </video>
+                                        </sly>
+                                    </div>
+                                    <span class="modal-custom_close" data-close-modal>
+                                        <div class="icon-close"></div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${item.ctaAssetType == 'link'}">
+                        <div class="pageheader__content__flex">
+                            <div>
+                                <div class="cta-primary-dark-wrapper">
+                                    <div class="cta-primary-dark-btn">
+                                        <a class="cta-primary-dark" href="${item.ctaSourceLink}.html" title="play video">${item.btnLabel}</a>
+                                    </div>
+                                    <div class="cta-primary-dark-icon">
+                                        <span class="icon-arrow-right-side"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </sly>
+                </div>
+                <div class="next-item">
+                    <div class="next-card">
+                        <div class="next-video">
+                            <sly data-sly-test="${item.nextItem.assetType == 'video'}">
+                                <video class="next-slide" playsinline="" loop="" muted="" autoplay src="${item.nextItem.videoBackgroundURL}" controls>
+                                </video>
+                                <span class="icon-play"></span>
+                            </sly>
+                            <sly data-sly-test="${item.nextItem.assetType != 'video'}">
+                                <img class="next-slide" src="${item.nextItem.assetImage}">
+                            </sly>
+                        </div>
+                        <div class="next-card-content">
+                            <p>${item.nextItem.currentPosition}</p>
+                            <p class="button-primary">${item.nextItem.title}</p>
+                        </div>
+                        <div class="nav-box">
+                            <div class="icon-arrow-left-side Arrow-left"></div>
+                            <div class="icon-arrow-right-side Arrow-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </sly>
+        <div class="header-carousel-dots"></div>
+    </div>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories = 'header_carousel,banner_page'}"/>
+<sly data-sly-call="${template.placeholder  @ isEmpty=!text}"/>

@@ -1,0 +1,54 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='clientlib-testimonials'}"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.TestimonialsModel"
+     data-sly-test.title="${model.bgColour}">
+    <div class="${model.bgColour}" data-about-testimonials>
+        <div class="quotes-wrapper">
+            <sly data-sly-list.item="${model.testItems}">
+                <div class="about-us">
+                    <div class="about-us_header">
+                        <p>${item.titleText}</p>
+                    </div>
+                    <div class="about-us_content">
+                        <div class="content-details">
+                            <div class="content-details_about">
+                                <div class="content-details_about_quote">
+                                    <h5>${item.quotation}</h5>
+                                </div>
+                                <div class="content-details_about_desc">
+                                    <div class="desc-name">${item.name}</div>
+                                    <div class="desc-title">${item.jobTitle}</div>
+                                </div>
+                            </div>
+                            <div data-sly-test="${item.btnRedirect}" class="content-details_readmore">
+                                <div>
+                                    <div class="cta-primary-light-wrapper">
+                                        <div class="cta-primary-light-btn"><a class="cta-primary-light" href="${item.btnRedirect}" title="read More" target="_blank" rel="noopener noreferrer">${item.ctaLabel}</a>
+                                        </div>
+                                        <div class="cta-primary-light-icon"><span class="icon-teamscard-read-more"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-image">
+                            <img src="${item.sideImage}" alt="Profile Image">
+                            <div class="quotation-mark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="36" viewBox="0 0 44 36"
+                                     fill="none">
+                                    <path d="M3.66972 35.9141L1.11497 31.4433C6.86315 28.1221 9.16242 23.5235 9.16242 18.5418L0.604021 18.5418L0.604022 0.914059L18.2318 0.91406L18.2318 15.2206C18.2318 24.5454 12.7391 33.1038 3.66972 35.9141ZM28.834 35.9141L26.1515 31.4433C32.0274 28.1221 34.3267 23.5236 34.3267 18.5418L25.7683 18.5418L25.7683 0.914061L43.396 0.914062L43.396 15.2206C43.396 24.5454 37.9033 33.1038 28.834 35.9141Z"
+                                          fill="white"></path>
+                                </svg>
+                            </div>
+                            <div class="navigation"><span class="icon-arrow-left-side left-arrow"></span><span
+                                    class="icon-arrow-right-side right-arrow"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+            <div class="navigation-dot"></div>
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!title}"/>

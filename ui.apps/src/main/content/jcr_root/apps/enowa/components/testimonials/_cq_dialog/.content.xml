@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Testimonials component"
+          extraClientlibs="authoring"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <theme jcr:primaryType="nt:unstructured"
+                           sling:resourceType="granite/ui/components/foundation/form/select"
+                           fieldLabel="Background colour"
+                           name="./bgColour">
+                        <items jcr:primaryType="nt:unstructured">
+                            <darktheme jcr:primaryType="nt:unstructured"
+                                       text="Dark Theme"
+                                       value="testimonial-theme-dark"/>
+                            <lighttheme jcr:primaryType="nt:unstructured"
+                                        text="Light Theme"
+                                        value="testimonial-theme-light"/>
+                        </items>
+                    </theme>
+
+                    <multifieldbox
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}true"
+                            required="{Boolean}true"
+                            fieldDescription="Click + to add a new item"
+                            fieldLabel="Testimonials Items">
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                name="./testItems">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <blockTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                fieldDescription="No limit"
+                                                name="./titleText"/>
+                                        <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Display Image"
+                                                rootPath="/content/dam"
+                                                fieldDescription="342 x 342 px"
+                                                name="./sideImage"/>
+                                        <Quotation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Quotation for the block"
+                                                fieldDescription="No limit (recommended 350 characters)"
+                                                name="./quotation"/>
+                                        <name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name"
+                                                fieldDescription="No limit"
+                                                name="./name"/>
+                                        <jobtitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Job Title"
+                                                fieldDescription="No limit"
+                                                name="./jobTitle"/>
+                                        <cTALabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="CTA label"
+                                                fieldDescription="Label of CTA button"
+                                                name="./ctaLabel"/>
+                                        <buttonLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="CTA Redirect Url"
+                                                fieldDescription="Redirect url for the CTA button"
+                                                rootPath="/content"
+                                                name="./btnRedirect"/>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </multifieldbox>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

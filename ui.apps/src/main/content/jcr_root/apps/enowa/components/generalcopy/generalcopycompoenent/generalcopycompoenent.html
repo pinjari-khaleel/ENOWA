@@ -1,0 +1,914 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<style>
+  .outer-container-two {
+    display: flex;
+    width: 1440px;
+    padding: 120px 203px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .general-copy-title-one {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .general-copy-parent {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .general-copy-left {
+    flex: 4;
+    height: 100%;
+    width: 609px;
+  }
+
+  .general-copy-right {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .general-copy-gap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .copy-header {
+    width: 823px;
+    max-width: 100%;
+  }
+
+  .right .top {
+    flex: 1;
+  }
+
+  .right .bottom {
+    flex: 1;
+  }
+
+  .parent-one {
+    width: 100%;
+    height: 100%;
+    padding: 64px 96px;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .right-one {
+    flex: 5;
+    height: 100%;
+  }
+
+  .left-one {
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .gap-one {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .left-one .top-one {
+    flex: 1;
+  }
+
+  .left-one .bottom-one {
+    flex: 1;
+  }
+
+  .parent-two {
+    width: 100%;
+    height: 331px;
+    padding: 64px 96px;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .gap_2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .left_2 {
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .left_2 .top_2 {
+    flex: 1;
+  }
+
+  .left_2 .bottom_2 {
+    flex: 1;
+  }
+
+  .right_2 {
+    flex: 5;
+
+    height: 100%;
+  }
+
+  .parent_container {
+    width: 100%;
+  }
+
+  .child_1 p {
+    padding-left: 414px;
+    padding-right: 414px;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+
+  .inner_child_2 {
+    padding-left: 414px;
+    padding-right: 414px;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+
+  .outer_main {
+    display: block;
+    padding: 120px 96px 120px 203px;
+    box-sizing: border-box;
+  }
+
+  .outer-div {
+    display: inline-flex;
+    padding: 120px 96px 120px 203px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    box-sizing: border-box;
+  }
+
+  .main-content {
+    display: flex;
+    gap: 100px !important;
+    justify-content: start !important;
+  }
+
+  .flex-1 {
+    display: flex;
+    width: unset;
+    justify-content: flex-start;
+  }
+
+  .flex-2 {
+    width: unset;
+  }
+
+  .general-copy-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+
+  .general-copy-title h2 {
+    margin-left: 0;
+  }
+
+  .general-copy-parent_main {
+    display: flex;
+    padding: 64px 0 64px 0;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .general-copy-top {
+    max-width: 609px;
+    width: 100%;
+  }
+
+  .general-copy-parent_main-2 {
+    display: flex;
+    padding: 64px 0px 64px 0px;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .general-copy-parent-2 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+    flex-direction: row-reverse;
+  }
+
+  .general-copy-eight-four {
+    flex: 4;
+    height: 100%;
+  }
+
+  .general-copy-left-2 {
+    flex: 4;
+    height: 100%;
+    width: 609px;
+  }
+
+  .general-copy-gap-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .general-copy-right-2 {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-direction: row-reverse;
+  }
+
+  .general-copy-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 607px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    gap: 24px;
+  }
+
+  .general-copy-top-2 {
+    max-width: 609px;
+    width: 100%;
+  }
+
+  .parent-container {
+    width: 100%;
+  }
+
+  .inner_child_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 48px 414px;
+    box-sizing: border-box;
+  }
+
+  .general-copy-center {
+    width: 609px;
+    align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .copy-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding: 120px 203px;
+    box-sizing: border-box;
+  }
+
+  .copy-main-content > :nth-child(1) {
+    width: 823px;
+    max-width: 100%;
+  }
+
+  .copy-main-content-1 {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    width: 100% !important;
+  }
+
+  .copy-leftpart {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 98px;
+    flex-shrink: 0;
+  }
+
+  .copy-rightpart {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .parsys-general-copy {
+    flex: 4;
+    width: 609px;
+  }
+
+  .child-1 {
+    max-width: 609px;
+    width: 100%;
+  }
+
+  .text-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .text-content img {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .copy-line {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .six-six-container {
+    width: 100%;
+    padding: 120px 96px 120px 203px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    box-sizing: border-box;
+  }
+
+  .six-six-content {
+    width: 100%;
+    display: flex;
+    gap: 131px;
+  }
+
+  .six-six-content img {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .content-1,
+  .content-2 {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .seven-five {
+    width: 100%;
+    padding: 64px 96px 64px 203px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .general-copy-content1 {
+    flex: 7;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .general-copy-content2 {
+    flex: 5;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-column {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .image-colum {
+    width: 100%;
+    height: auto;
+  } 
+
+  .text-content > p {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin:0;
+}
+
+  @media screen and (max-width: 991px) {
+    .general-copy-parent {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      flex-direction: column;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .parsys-general-copy {
+      width: 100%;
+    }
+
+    .outer_main {
+      padding: 30px;
+    }
+
+    .flex-1 {
+      width: 100%;
+    }
+
+    .flex-2 {
+      width: 100%;
+    }
+
+    .general-copy-content {
+      width: auto;
+    }
+
+    .general-copy-left-2 {
+      width: 100%;
+    }
+
+    .general-copy-left {
+      width: 100%;
+    }
+
+    .copy-leftpart {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .copy-rightpart {
+      width: 100%;
+    }
+
+    .general-component-image {
+      width: 399px;
+      height: 331px;
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
+    .new.section {
+      display: none;
+    }
+
+    .general-copy-parent_main {
+      display: flex;
+      padding: 0;
+    }
+
+    .main-content {
+      flex-wrap: wrap;
+      gap: 60px;
+    }
+
+    .general-copy-parent-2 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .general-copy-parent_main-2 {
+      padding: 0px;
+    }
+
+    .general-copy-parent-2 {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      flex-direction: column;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .copy-main-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 24px;
+      padding: 30px !important;
+      box-sizing: border-box;
+    }
+
+    .copy-main-content-1 {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100% !important;
+    }
+
+    .outer-div {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 48px;
+      box-sizing: border-box;
+    }
+
+    .inner_child_1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .general-copy-center {
+      width: auto;
+      align-items: center;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .six-six-container {
+      padding: 24px;
+    }
+
+    .six-six-content {
+      flex-direction: column;
+    }
+
+    .content-1,
+    .content-2 {
+      width: 100%;
+    }
+
+    .seven-five {
+      padding: 24px;
+      flex-direction: column-reverse;
+    }
+
+    .general-copy-content1 {
+      flex:1;
+    }
+
+    .general-copy-content2 {
+      flex: 1;
+    }
+
+    /* .text-content {
+      gap: 0px;
+    } */
+
+    .text-content .bold-title {
+      margin-bottom: 0px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .general-copy-parent {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      flex-direction: column;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .parsys-general-copy {
+      width: 100%;
+    }
+
+    .outer_main {
+      padding: 30px;
+    }
+
+    .flex-1 {
+      width: 100%;
+    }
+
+    .flex-2 {
+      width: 100%;
+    }
+
+    .general-copy-content {
+      width: auto;
+    }
+
+    .general-copy-left-2 {
+      width: 100%;
+    }
+
+    .general-copy-left {
+      width: 100%;
+    }
+
+    .copy-leftpart {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .copy-rightpart {
+      width: 100%;
+    }
+
+    .general-component-image {
+      width: 399px;
+      height: 331px;
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
+    .new.section {
+      display: none;
+    }
+
+    .general-copy-parent_main {
+      display: flex;
+      padding: 0;
+    }
+
+    .main-content {
+      flex-wrap: wrap;
+      gap: 60px;
+    }
+
+    .general-copy-parent-2 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .general-copy-parent_main-2 {
+      padding: 0px;
+    }
+
+    .general-copy-parent-2 {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      flex-direction: column;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .copy-main-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 24px;
+      padding: 30px !important;
+      box-sizing: border-box;
+    }
+
+    .copy-main-content-1 {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100% !important;
+    }
+
+    .outer-div {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 48px;
+      box-sizing: border-box;
+    }
+
+    .inner_child_1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .general-copy-center {
+      width: auto;
+      align-items: center;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .six-six-container {
+      padding: 24px;
+    }
+
+    .six-six-content {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .content-1,
+    .content-2 {
+      width: 100%;
+    }
+
+    .seven-five {
+      padding: 24px;
+      flex-direction: column-reverse;
+    }
+
+    .general-copy-content1 {
+      flex:1;
+    }
+
+    .general-copy-content2 {
+      flex: 1;
+    }
+
+    /* .text-content {
+      gap: 0px;
+    } */
+
+    .text-content .bold-title {
+      margin-bottom: 0px;
+    }
+    
+    .copy-main-content .bold-title {
+      margin-bottom: 0px;
+    }
+
+    .text-content img {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .six-six-content img {
+      width: 100%;
+      border-radius: 16px;
+    }
+  }
+</style>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.GeneralCopy">
+    <div
+            class="general-copy-parent_main"
+            style="background-color:${properties.bgColor @ context='styleToken'};"
+            data-sly-test="${properties.layout == 'fourEight'}"
+    >
+        <div class="general-copy-parent">
+            <div class="general-copy-left">
+                <div
+                        class="text-content" style="color: ${model.color @ context='styleToken'};"
+                        data-sly-resource="${'topParsys1' @ resourceType='foundation/components/parsys'}"
+                ></div>
+            </div>
+            <div class="general-copy-gap"></div>
+            <div class="general-copy-right">
+                <div class="general-copy-top">
+                    <div class="general-copy-content">
+                        <div
+                                class="text-content" style="color: ${model.color @ context='styleToken'};"
+                                data-sly-resource="${'topParsys2' @ resourceType='foundation/components/parsys'}"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="general-copy-gap"></div>
+        </div>
+    </div>
+
+    <!-- <div class="general-copy-parent_main-2" style="background-color:${properties.bgColor @ context='styleToken'};"
+         data-sly-test="${properties.layout == 'eightFour'}">
+        <div class="general-copy-parent-2">
+            <div class="general-copy-left-2">
+                <div class="text-content" data-sly-resource="${'topParsys1' @ resourceType='foundation/components/parsys'}">
+                </div>
+            </div>
+            <div class="general-copy-gap-2"></div>
+            <div class="general-copy-right-2">
+                <div class="general-copy-top-2">
+                    <div class="general-copy-content">
+                        <div class="text-content"
+                             data-sly-resource="${'topParsys2' @ resourceType='foundation/components/parsys'}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="general-copy-gap-2"></div>
+        </div>
+    </div> -->
+
+    <div
+            class="seven-five"
+            style="background-color:${properties.bgColor @ context='styleToken'};"
+            data-sly-test="${properties.layout == 'eightFour'}"
+    >
+        <div class="general-copy-content1">
+            <div
+                    class="text-column"
+                    data-sly-resource="${'topParsys1' @ resourceType='foundation/components/parsys'}"
+            ></div>
+        </div>
+        <div class="general-copy-content2">
+            <div
+                    class="image-column"
+                    data-sly-resource="${'topParsys2' @ resourceType='foundation/components/parsys'}"
+            ></div>
+        </div>
+    </div>
+
+    <div
+            class="parent-container"
+            style="background-color:${properties.bgColor @ context='styleToken'};"
+            data-sly-test="${properties.layout == 'center'}"
+    >
+        <div class="inner_child_1">
+            <div class="general-copy-center">
+                <div
+                        class="copy-line"
+                        data-sly-resource="${'twoParsys1' @ resourceType='foundation/components/parsys'}"
+                ></div>
+            </div>
+        </div>
+    </div>
+
+    <div
+            class="six-six-container"
+            style="background-color:${properties.bgColor @ context='styleToken'};"
+            data-sly-test="${properties.layout == 'sixSix'}"
+    >
+            <div
+                    data-sly-resource="${'oneParsys1' @ resourceType='foundation/components/parsys'}"
+            ></div>
+        <div class="six-six-content">
+            <div
+                    class="content-1"
+                    data-sly-resource="${'oneParsys2' @ resourceType='foundation/components/parsys'}"
+            >
+                <div
+                        data-sly-resource="${'oneParsys2' @ resourceType='foundation/components/parsys'}"
+                ></div>
+            </div>
+            <div
+                    class="content-2"
+                    data-sly-resource="${'oneParsys3' @ resourceType='foundation/components/parsys'}"
+            ></div>
+        </div>
+    </div>
+
+    <div
+            class="copy-main"
+            style="background-color:${properties.bgColor @ context='styleToken'};"
+            data-sly-test="${properties.layout == 'varone'}"
+    >
+        <div class="copy-main-content">
+            <sly data-sly-resource="${'oneParsys3' @ resourceType='foundation/components/parsys'}">
+            </sly>
+            <div class="copy-main-content-1">
+                <div class="copy-leftpart">
+                    <div
+                            class="text-content" style="color: ${model.color @ context='styleToken'};"
+                            data-sly-resource="${'oneParsys1' @ resourceType='foundation/components/parsys'}"
+                    ></div>
+                </div>
+                <div class="copy-rightpart">
+                    <div
+                            class="text-content" style="color: ${model.color @ context='styleToken'};"
+                            data-sly-resource="${'oneParsys2' @ resourceType='foundation/components/parsys'}"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.layout}"></sly>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='generalcopycompoenent'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!text}"></sly>

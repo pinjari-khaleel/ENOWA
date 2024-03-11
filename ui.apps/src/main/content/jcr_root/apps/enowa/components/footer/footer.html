@@ -1,0 +1,38 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.policyText}"></sly>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='global.style'}"></sly>
+<sly
+        data-sly-use.item="com.neom.enowa.aem.core.models.FooterModel"
+        data-sly-test.multitext="${item.mediaItems}">
+
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_breadcrumbs"  data-sly-list.multi="${item.footerItems}">
+                <a href="javascript:void(0);" data-sly-test.isLast="${multiList.count == item.footerItemSize}">${multi.heading}</a>
+                <a href="${multi.url}" data-sly-test="${!isLast}">${multi.heading}</a>
+                <i class="icon-semi-arrow-right" data-sly-test="${!isLast}"></i>
+            </div>
+            <div class="footer_break"></div>
+            <div class="footer_policies">
+                <div class="footer_policies_terms">
+                    <a href="${item.policyLink}">${item.policyText}</a>
+                    <i class="icon-ellipse"></i>
+                    <a href="${item.termsLink}">${item.termsText}</a>
+                    <i class="icon-ellipse"></i>
+                    <a href="${item.cookieLink}">${item.cookieText}</a>
+                </div>
+                <div class="footer_policies_break">
+                    <div class="footer_policies_copyrights">
+                        <p>${item.copyRight}</p>
+                    </div>
+                    <div class="footer_policies_media"  data-sly-list.multitext="${item.mediaItems}">
+                        <a href="${multitext.mediaLink}">
+                            <img src="${multitext.mediaTitle}" alt="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</sly>

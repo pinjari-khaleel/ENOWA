@@ -1,0 +1,61 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.title}"></sly>
+<sly data-sly-use.clientLib="core/wcm/components/commons/v1/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='clientlib-videocomponent'}"></sly>
+
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.VideoComponentModel"
+     data-sly-test="${item.description}">
+
+    <style>
+        .video-container .container-video .wrapper .hover-area:hover {
+            cursor: url('data:image/svg+xml;utf8,<svg fill="%238fd3d3" xmlns="http://www.w3.org/2000/svg" width="120" height="120"><circle cx="60" cy="60" r="60"/><text x="60" y="65" font-family="Arial" font-size="16" fill="black" text-anchor="middle">Play Now</text></svg>'), auto
+        }
+    </style>
+
+    <div class="video-container" data-video>
+        <div class="container-video">
+            <div class="wrapper options">
+                <video class="hover-area" src="${item.video}"></video>
+                <div class="preview-video-container">
+                    <div class="preview-video-play"> <span class="icon-play"></span></div>
+                    <div class="perview-subcontent">
+                        <div class="preview-video-content">
+                            <p>${item.title}</p>
+                        </div>
+                        <div class="video-time-content"> <span class="time-duration"></span></div>
+                    </div>
+                </div>
+                <ul class="video-controls">
+                    <li class="options left">
+                        <button class="play-pause"><span class="icon-play"></span></button>
+                        <mob-cont>
+                            <div class="progress-range" title="Jump-to">
+                                <div class="progress-bar"></div>
+                            </div><span class="time-elapsed"></span>
+                        </mob-cont>
+                    </li>
+                    <li class="options right">
+                        <div class="playback-content">
+                            <button class="volume">
+                                <div class="icon-unmute"></div>
+                            </button>
+                            <button class="playback-speed">
+                                <div class="icon-setting"></div>
+                            </button>
+                            <ul class="speed-options">
+                                <li data-speed="2">2x</li>
+                                <li data-speed="1.5">1.5x</li>
+                                <li class="active" data-speed="1">Normal</li>
+                                <li data-speed="0.75">0.75x</li>
+                                <li data-speed="0.5">0.5x</li>
+                            </ul>
+                            <button class="fullscreen">
+                                <div class="icon-teamscard-read-more"></div>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</sly>

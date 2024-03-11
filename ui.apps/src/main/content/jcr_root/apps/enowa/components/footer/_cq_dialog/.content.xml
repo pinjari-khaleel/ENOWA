@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Footer Component"
+          extraClientlibs="authoring"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <displayNumber
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                            fieldLabel="Navigation Start Level"
+                            min="1"
+                            value="2"
+                            name="./numberLevel"/>
+                    <policy
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Policy title"
+                            fieldDescription="Text field for policy"
+                            name="./policyText"/>
+                    <policyLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Redirect URL for policy"
+                            fieldDescription="Redirect url for policy"
+                            rootPath="/content"
+                            name="./policyLink"/>
+                    <termsofuse
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Terms of use title"
+                            fieldDescription="Text field for Terms of use"
+                            name="./termsText"/>
+                    <termsLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Redirect URL for terms of use"
+                            fieldDescription="Redirect url for terms of use"
+                            rootPath="/content"
+                            name="./termsLink"/>
+                    <cookiepolicy
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="cookie policy title"
+                            fieldDescription="Text field for cookie policy"
+                            name="./cookieText"/>
+                    <cookieLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Redirect URL for cookie policy"
+                            fieldDescription="Redirect url for cookie policy"
+                            rootPath="/content"
+                            name="./cookieLink"/>
+                    <copyright
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Copy right content"
+                            fieldDescription="Text field for copy right"
+                            name="./copyRight"/>
+
+                    <multifielditem
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}true"
+                            required="{Boolean}true"
+                            fieldDescription="Click + to add a new item"
+                            fieldLabel="Social Media Items">
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                name="./mediaItems">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <mediaImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldLabel="Media Image"
+                                                validation="svg-media-validation"
+                                                fieldDescription="media Image"
+                                                rootPath="/content/dam"
+                                                name="./mediaTitle"/>
+                                        <mediaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="media link"
+                                                fieldDescription="media ink to redirect"
+                                                name="./mediaLink"/>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </multifielditem>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

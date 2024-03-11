@@ -1,0 +1,67 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.PageBannerModel" data-sly-test.text="${model.title}">
+    <section class="pagevideo-section">
+        <div class="pagebanner" data-page-header>
+            <div class="banner">
+                <sly data-sly-test="${model.bgAssetType != 'video'}">
+                    <div class="pagebanner_image">
+                        <img src="${model.sourceImg}" alt="${model.altImg}" />
+                    </div>
+                </sly>
+                <sly data-sly-test="${model.bgAssetType == 'video'}">
+                    <div class="pagebanner__video">
+                        <video autoplay loop muted>
+                            <source src="${model.sourceVideo}" alt="${model.altVideo}" type="video/mp4" />
+                        </video>
+                    </div>
+                </sly>
+                <div class="pagebanner__items">
+                    <div class="pagebanner__items__heading">
+                        <h1>${model.title}</h1>
+                        <h2>${model.title}</h2>
+                        <div class="pagebanner__items__heading__paragraph">
+                            <p>${model.description}</p>
+                        </div>
+                    </div>
+                    <div class="pagebanner__items__flexbox" data-sly-test="${model.ctaSourceLink || model.ctaSourceVideo}">
+                        <div data-sly-test="${model.ctaAssetType == 'link' && model.ctaSourceLink}">
+                            <div class="cta-primary-dark-wrapper">
+                                <div class="cta-primary-dark-btn"><a class="cta-primary-dark" href="${model.ctaSourceLink}" target="_blank" rel = "noopener noreferrer" title="${model.title}">${model.ctaBtn}</a></div>
+                                <div class="cta-primary-dark-icon"><span class="icon-arrow-right-side"></span></div>
+                            </div>
+                        </div>
+                        <div class="cta" data-sly-test="${model.ctaAssetType == 'ctavideo' && model.ctaSourceVideo}">
+                            <div class="cta-primary-dark-wrapper">
+                                <div class="cta-primary-dark-btn"><a class="cta-primary-dark open-modal" href="#" title="${model.title}" attr="data-open-modal">${model.ctaBtn}</a></div>
+                                <div class="cta-primary-dark-icon"><span class="icon-arrow-right-side"></span></div>
+                            </div>
+                        </div>
+                        <div data-sly-test="${model.ctaAssetType == 'ctavideo' && model.ctaSourceVideo}">
+                            <div class="modal-custom" data-modal-block>
+                                <div class="modal-custom_dialog">
+                                    <div class="modal-custom_content video-iframe">
+                                        <sly data-sly-test="${model.testUrl}">
+                                            <iframe width="100%" height="700" src="${model.ctaSourceVideo}" frameborder="0" allowfullscreen="1" webkitallowfullscreen="1" allow="autoplay" sandbox="allow-same-origin allow-scripts"></iframe>
+                                        </sly>
+                                        <sly data-sly-test="${!model.testUrl}">
+                                            <video autoplay loop muted>
+                                                <source src="${model.ctaSourceVideo}" type="video/mp4" />
+                                            </video>
+                                        </sly>
+                                    </div>
+                                    <span class="modal-custom_close" data-close-modal>
+                                        <div class="icon-close"></div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</sly>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='banner_page'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!text}"></sly>
+

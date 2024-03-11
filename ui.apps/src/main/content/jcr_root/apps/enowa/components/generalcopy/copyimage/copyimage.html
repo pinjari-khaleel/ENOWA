@@ -1,0 +1,73 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<style>
+    .general-component {
+        display: flex;
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .general-component-image {
+        width: 399px;
+        height: 331px;
+        flex-shrink: 0;
+    }
+
+    .general-component-variation-image {
+        display: flex;
+        width: 100%;
+        height: 105;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: auto;
+    }
+
+    .general-component-variation-image img {
+        width: 100%;
+        height: 100%;
+        max-height: 432px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .general-component-head {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+    @media screen and (max-width: 768px) {
+        .general-component {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+        .general-component-variation-image {
+            width: 100%;
+            height: auto;
+            margin: auto;
+        }
+
+        .general-component-variation-image img {
+            max-height: 432px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+    }
+</style>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.FontColor">
+    <div class="general-component">
+        <div data-sly-test="${properties.title}" class="general-component-head" style="color: ${model.color @ context='styleToken'};">
+            ${properties.title}
+        </div>
+        <div class="${properties.variationImg ? 'general-component-image' : 'general-component-variation-image'}">
+            <img src="${properties.imagePath}" alt="left image" srcset="">
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.imagePath}"></sly>

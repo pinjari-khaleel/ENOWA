@@ -1,0 +1,27 @@
+<div data-sly-use.templates="/libs/core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder  @ isEmpty=!properties.displayNumber}"></sly>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.InfoGraphicModel">
+
+   <p>${item.displayNumber}</p>
+
+    <sly data-sly-list.multi="${item.tabLists}">
+        <p>${multi.title}</p>
+        <p>${multi.description}</p>
+        <p> ${multi.cta}</p>
+        <p> ${multi.link}</p>
+        <p> ${multi.borderColor}</p>
+        <div data-sly-test="${multi.assetType == 'image'}">
+            <p> ${multi.assetImage}</p>
+            <p> ${multi.imageAlt}</p>
+        </div>
+        <div data-sly-test="${multi.assetType == 'video'}">
+            <p> ${multi.videoBackgroundImage}</p>
+            <p> ${multi.videoBackgroudImageAlt}</p>
+        </div>
+    </sly>
+
+
+
+</sly>
+
+

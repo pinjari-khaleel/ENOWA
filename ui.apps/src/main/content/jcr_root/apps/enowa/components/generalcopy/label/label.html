@@ -1,0 +1,19 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<style>
+    .label-text {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 27px;
+        letter-spacing: 3px;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 5px 0 24px 0;
+    }
+</style>
+<sly data-sly-use.model="com.neom.enowa.aem.core.models.FontColor">
+    <div>
+        <p class="label-text" style="color: ${model.color @ context='styleToken'};" >${properties.label}</p>
+    </div>
+</sly>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.label}"></sly>

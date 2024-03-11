@@ -1,0 +1,80 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.title}"></sly>
+<sly data-sly-use.item="com.neom.enowa.aem.core.models.AllLatestUpdatesModel"
+     data-sly-test="${item.title}">
+    <div class="news-room" data-news-room>
+        <div class="all-news-section">
+            <div data-sly-list.items="${item.columnItemsList}">
+                <div class="news-card-container">
+                    <div class="news-room-card" data-sly-test="${items.leftColumnItem}">
+                        <sly data-sly-test="${items.leftColumnItem.assetType != 'video'}">
+                            <div class="news-image">
+                                <img src="${items.leftColumnItem.sourceImg}" alt="Bleak">
+                            </div>
+                        </sly>
+                        <sly data-sly-test="${items.leftColumnItem.assetType == 'video'}">
+                            <div class="news-image">
+                                <video class="videoHover" src="${items.leftColumnItem.sourceVideo}" controls alt="Video"></video>
+                                <span class="icon-button-video-play"></span>
+                            </div>
+                        </sly>
+                        <div class="news-content">
+                            <div class="news-date-section">
+                                <div class="news-date">${'dd' @ format=items.leftColumnItem.date}.${'MM' @ format=items.leftColumnItem.date}
+                                </div>
+                                <div class="news-year">${'YYY' @ format=items.leftColumnItem.date}</div>
+                            </div>
+                            <div class="news-headline">
+                                <div class="headline-content">
+                                    <div class="headline">${items.leftColumnItem.innerTitle}</div>
+                                    <div class="news-desc">${items.leftColumnItem.description}
+                                    </div>
+                                </div>
+                                <div class="read-more-container"><a href="${items.leftColumnItem.link}.html"><span>Read More</span>
+                                    <div class="nav-link">
+                                        <div class="icon-nav-vector"></div>
+                                    </div>
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-room-card" data-sly-test="${items.rightColumnItem}">
+                        <sly data-sly-test="${items.rightColumnItem.assetType != 'video'}">
+                            <div class="news-image">
+                                <img src="${items.rightColumnItem.sourceImg}" alt="Bleak">
+                            </div>
+                        </sly>
+                        <sly data-sly-test="${items.rightColumnItem.assetType == 'video'}">
+                            <div class="news-image">
+                                <video class="videoHover" src="${items.rightColumnItem.sourceVideo}" controls alt="Video"></video>
+                                <span class="icon-button-video-play"></span>
+                            </div>
+                        </sly>
+                        <div class="news-content">
+                            <div class="news-date-section">
+                                <div class="news-date">${'dd' @ format=items.rightColumnItem.date}.${'MM' @
+                                    format=items.rightColumnItem.date}
+                                </div>
+                                <div class="news-year">${'YYY' @ format=items.rightColumnItem.date}</div>
+                            </div>
+                            <div class="news-headline">
+                                <div class="headline-content">
+                                    <div class="headline">${items.rightColumnItem.innerTitle}</div>
+                                    <div class="news-desc">${items.rightColumnItem.description}
+                                    </div>
+                                </div>
+                                <div class="read-more-container"><a href="${items.rightColumnItem.link}.html"><span>Read More</span>
+                                    <div class="nav-link">
+                                        <div class="icon-nav-vector"></div>
+                                    </div>
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories = 'clientlib-alllatestnews'}"></sly>

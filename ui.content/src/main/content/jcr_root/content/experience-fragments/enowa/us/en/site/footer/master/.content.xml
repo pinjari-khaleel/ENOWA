@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[]"
+        cq:template="/conf/enowa/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        sling:resourceType="enowa/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="enowa/components/container"
+            layout="responsiveGrid">
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="enowa/components/footer"
+                cookieLink="/content/enowa/us/en/cookie-policy"
+                cookieText="COOKIE POLICY"
+                copyRight="COPYRIGHT © 2023 ENOWA. ALL RIGHTS RESERVED"
+                policyLink="/content/enowa/us/en/privacy-policy"
+                policyText="PRIVACY POLICY"
+                termsLink="/content/enowa/us/en/terms-and-conditions"
+                termsText="TERMS OF USE">
+                <mediaItems jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        mediaLink="https://m.facebook.com/enowa.neom/?locale=hi_IN"
+                        mediaTitle="/content/dam/enowa/facebook.svg"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        mediaLink="https://twitter.com/ENOWA_NEOM"
+                        mediaTitle="/content/dam/enowa/x.svg"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        mediaLink="https://www.linkedin.com/company/neom-enowa/"
+                        mediaTitle="/content/dam/enowa/linked in.svg"/>
+                    <item3
+                        jcr:primaryType="nt:unstructured"
+                        mediaLink="https://www.youtube.com/@ENOWA_NEOMOFFICIAL"
+                        mediaTitle="/content/dam/enowa/you tube.svg"/>
+                </mediaItems>
+            </footer>
+        </root>
+    </jcr:content>
+</jcr:root>

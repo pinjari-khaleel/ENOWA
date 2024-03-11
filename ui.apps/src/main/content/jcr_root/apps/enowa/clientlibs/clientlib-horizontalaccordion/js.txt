@@ -1,0 +1,2 @@
+#base=js
+HorizontalAccordion.js

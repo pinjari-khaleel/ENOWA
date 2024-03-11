@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/enowa/settings/wcm/templates/landing-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="404"
+        sling:resourceType="enowa/components/page"
+        favicon="/content/dam/enowa/favicon.png"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any"
+        hideInNav="true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="enowa/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="enowa/components/container">
+                <generalcopycompoenen
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="enowa/components/generalcopy/generalcopycompoenent"
+                    bgColor="#FFFFFF"
+                    layout="fourEight">
+                    <topParsys1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <copyimage
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="enowa/components/generalcopy/copyimage"
+                            imagePath="/content/dam/enowa/00-enowa-content/water/water-overview/Water overview Circle intro.png"
+                            variationImg="false"/>
+                    </topParsys1>
+                    <topParsys2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="enowa/components/text"
+                            text="&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Sorry this page is not found&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                    </topParsys2>
+                </generalcopycompoenen>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>
