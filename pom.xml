@@ -145,7 +145,7 @@
                                                 
                 <requireMavenVersion>
                                                       
-                  <version>[3.3.9,)</version>
+                  <version>[3.3.9,]</version>
                                                   
                 </requireMavenVersion>
                                                 
