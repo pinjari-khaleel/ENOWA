@@ -121,6 +121,9 @@
                 <exclusions>
                     <exclusion>**/accordianvariation.html</exclusion>
                 </exclusions>
+               <properties>
+                    <sonar.language>web</sonar.language>
+                </properties>
             </configuration>
       </plugin>
                   
