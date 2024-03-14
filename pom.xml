@@ -116,7 +116,7 @@
       <plugin>
               <groupId>org.sonarsource.scanner.maven</groupId>
               <artifactId>sonar-maven-plugin</artifactId>
-              <version>${sonar.maven.plugin.version}</version>
+              <version>3.9.1.2184</version>
       </plugin>
                   
       <!-- Maven Enforcer Plugin -->
@@ -145,7 +145,7 @@
                                                 
                 <requireMavenVersion>
                                                       
-                  <version>[3.3.9,]</version>
+                  <version>[3.3.9,)</version>
                                                   
                 </requireMavenVersion>
                                                 
